@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-// import './router.scss';
-import Header from '../component/header/header'
+import './router.scss';
+import Header from '../../component/header/header'
 
 export default class Home extends Component {
 

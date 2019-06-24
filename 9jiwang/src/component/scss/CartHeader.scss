@@ -1,0 +1,52 @@
+.header.fixed {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 8;
+  .main {
+    height: 44px;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    .left-side {
+      height: 44px;
+    }
+    .back-button {
+      height: 44px;
+      min-width: 44px;
+      box-sizing: border-box;
+    }
+    .title {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+    }
+    .right-side {
+      height: 44px;
+    }
+  }
+}
+.bg {
+  background-size: cover;
+  width: 10rem;
+  height: 3.5rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-repeat: no-repeat;
+  background-position: top;
+}
+.bg-card {
+  height: 1.6rem;
+  color: #fff;
+  padding: 10px;
+  box-sizing: border-box;
+  position: relative;
+}
+.bg-card h2 {
+  font-size: 18px;
+  line-height: 20px;
+}

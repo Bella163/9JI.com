@@ -1,0 +1,60 @@
+.detail-head {
+  height: 44px;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+  .left-side {
+    height: 44px;
+  }
+  .back-button {
+    height: 44px;
+    min-width: 44px;
+    box-sizing: border-box;
+  }
+  .title {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+  }
+  .detail-nav {
+    height: 100%;
+    text-align: center;
+    line-height: 44px;
+    a {
+      position: relative;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+      padding: 5px 0;
+      font-size: 12px;
+      transition: all 0.1s;
+    }
+    a + a {
+      margin-left: 22px;
+    }
+    a.active {
+      font-size: 15px;
+      font-weight: 500;
+      color: #f21c1c;
+    }
+    a.active:after {
+      content: "";
+      position: absolute;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: #f21c1c;
+      z-index: 9;
+    }
+  }
+  .menu-btn {
+    width: 44px;
+    height: 44px;
+  }
+}
+a {
+  color: #333;
+  text-decoration: none;
+  outline: 0;
+}

@@ -4,6 +4,8 @@ import '../scss/Cart.scss';
 
 import CartHeader from '../../component/js/CartHeader';
 import CartItem from '../../component/js/CartItem';
+import CartRecommend from '../../component/js/CartRecommend';
+import CartFooter from '../../component/js/CartFooter';
 
 class Cart extends Component {
     render() {
@@ -11,6 +13,8 @@ class Cart extends Component {
             <div className="wrapper full-height">
                 <CartHeader/>
                 <CartItem/>
+                <CartRecommend/>
+                <CartFooter/>
             </div>
         )
     }

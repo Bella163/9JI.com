@@ -67,4 +67,6 @@ class CartHeader extends Component {
   }
 }
 
-export default CartHeader;
+export default connect((state) => {
+  return state
+})(CartHeader);

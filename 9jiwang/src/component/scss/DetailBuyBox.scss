@@ -1,0 +1,197 @@
+.detail-buy-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 20;
+  overflow-y: scroll;
+  .dialog-mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .popup-layer-wrapper {
+    border-radius: 10px 10px 0 0;
+    background: #fff;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding-bottom: 0;
+    .popup-scroller {
+      width: 100%;
+      overflow-y: scroll;
+      -webkit-overflow-scrolling: touch;
+      box-sizing: border-box;
+    }
+    .popup-btns-row {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+    }
+  }
+
+  .buy-module-count {
+    height: 44px;
+    margin-top: 28px;
+    margin-right: 20px;
+  }
+  .btn-popup-close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #9c9c9c;
+    z-index: 1;
+    padding: 10px 10px 20px 20px;
+  }
+  .buy-img-box {
+    position: absolute;
+    left: 10px;
+    top: -27px;
+    height: 120px;
+    width: 120px;
+    border: 1px solid #9c9c9c;
+    border-radius: 6px;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  .buy-img-box img {
+    width: 100%;
+    height: 100%;
+  }
+  .btn-tiny {
+    box-sizing: border-box;
+    height: 24px;
+    line-height: 22px;
+    border: 1px solid #dfdfdf;
+    text-align: center;
+    width: 24px;
+    font-size: 12px;
+  }
+  .btn-tiny.disable {
+    color: #9c9c9c;
+  }
+  .btn-tiny.btn-minus {
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+  }
+  .btn-tiny.btn-plus {
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+  }
+  .buy-content-text {
+    line-height: 1.5;
+  }
+  .buy-product-main-title {
+    font-size: 16px;
+    margin-top: 14px;
+    padding-top: 10px;
+    margin-right: 10px;
+  }
+  .buy-product-main-title a {
+    color: #6679b3;
+    line-height: 16px;
+  }
+  .buy-product-main-title a .fa {
+    margin-right: 5px;
+  }
+  .buy-product-header {
+    position: relative;
+    height: 105px;
+    padding: 18px 10px 0 148px;
+    box-sizing: border-box;
+  }
+  .buy-product-header .buy-product-price {
+    color: #f21c1c;
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+  .buy-product-content {
+    padding-left: 10px;
+    .buy-product-module {
+      margin-top: 14px;
+    }
+  }
+  .buy-product-content .buy-product-module {
+    margin-top: 14px;
+  }
+  .buy-product-content .buy-product-module .border-top {
+    padding-top: 10px;
+    margin-right: 10px;
+  }
+  .buy-product-content .svg-btn {
+    margin-right: 10px;
+    margin-top: 10px;
+  }
+  .buy-product-content .svg-btn .btn-buy {
+    margin-right: 0;
+    display: block;
+    line-height: 28px;
+    box-sizing: border-box;
+    min-width: 76px;
+    margin-top: 0;
+  }
+  .buy-product-content .btn-buy {
+    height: 30px;
+    line-height: 28px;
+    text-align: center;
+    border: 1px solid #dfdfdf;
+    border-radius: 16px;
+    margin-right: 10px;
+    margin-top: 10px;
+    font-size: 12px;
+    padding: 0 8px;
+    box-sizing: border-box;
+  }
+  .buy-product-content .btn-buy.active {
+    color: #f21c1c;
+    border: 1px solid #f21c1c;
+  }
+  .buy-product-content .btn-buy.btn-small {
+    min-width: 66px;
+  }
+  .buy-product-content .btn-buy.btn-avge2 {
+    min-width: 46%;
+  }
+  .buy-product-content .btn-buy.disable {
+    color: #9c9c9c;
+    border: 1px dotted #dfdfdf;
+  }
+  .product-number {
+    box-sizing: border-box;
+    width: 35px;
+    height: 24px;
+    line-height: 22px;
+    text-align: center;
+    padding: 0 5px;
+    background-color: #f9f9f9;
+    border-top: 1px solid #dfdfdf;
+    border-bottom: 1px solid #dfdfdf;
+  }
+  .service-icon {
+    height: 16px;
+    width: 16px;
+    margin-right: 5px;
+  }
+  .sku-btn {
+    display: block;
+    height: 50px;
+    background-color: #f21c1c;
+  }
+  .sku-btn .btn {
+    color: #fff;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    cursor: pointer;
+  }
+  .sku-btn .btn.disabled {
+    background-color: #9c9c9c;
+  }
+}

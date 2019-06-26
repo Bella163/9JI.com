@@ -14,8 +14,8 @@ import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
     <Provider store={store}>
-        {/* <Detail /> */}
-        <Cart/>
+        <Detail />
+        {/* <Cart/> */}
     </Provider>
 
 , document.getElementById('root'));

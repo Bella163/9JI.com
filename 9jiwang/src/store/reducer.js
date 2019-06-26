@@ -7,7 +7,8 @@ import {
   CHECK_ALL,
   TOTAL_MONEY,
   INIT_TO_CART,
-  EDIT_GOOD
+  EDIT_GOOD,
+  CLOSE_BUY_BOX
 } from "./visibility";
 const defaultState = {
   isAllChecked: false,
@@ -39,45 +40,47 @@ const defaultState = {
   ],
   cartTotalMoney: 0,
   cartTotalCount: 0,
-  isShowCartTotal: true
+  isShowCartTotal: true,
+  isShowDetailBuyBox: false,
+  detailFooterInfo : '加入购物车'
 };
 
 export default (state = defaultState, action) => {
   switch (action.type) {
-    case "ADD_GOOD":
+    case ADD_GOOD:
       return {
         ...state,
         renderlist: action.payload
       };
       break;
-    case "REDUCE_GOOD":
+    case REDUCE_GOOD:
       return {
         ...state,
         renderlist: action.payload
       };
       break;
-    case "CHECK_ONE":
+    case CHECK_ONE:
       return {
         ...state,
         renderlist: action.payload.list,
         cartTotalCount: action.payload.len
       };
       break;
-    case "CHECK_ALL":
+    case CHECK_ALL:
       return {
         ...state,
         isAllChecked: action.payload.allcheck,
         cartTotalCount: action.payload.len
       };
       break;
-    case "TOTAL_MONEY":
+    case TOTAL_MONEY:
       return {
         ...state,
         cartTotalMoney: action.payload.Money,
         cartTotalCount: action.payload.len
       };
       break;
-    case "REMOVE_GOOD":
+    case REMOVE_GOOD:
       return {
         ...state,
         renderlist: action.payload
@@ -87,8 +90,14 @@ export default (state = defaultState, action) => {
     case EDIT_GOOD:
       return {
         ...state,
-        // renderlist: action.payload
-        isShowCartTotal:action.payload
+        isShowCartTotal: action.payload
+      };
+      break;
+    case CLOSE_BUY_BOX:
+      return {
+        ...state,
+        isShowDetailBuyBox: action.payload.showBuyBox,
+        detailFooterInfo : action.payload.info
       };
       break;
     default:

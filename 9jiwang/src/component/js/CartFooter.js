@@ -17,28 +17,27 @@ class CartFooter extends Component {
       list: []
     };
   }
-  allCheck() {
+  allCheck() {//全选逻辑
     let allcheck = this.props.isAllChecked;
-    console.log("allcheck前", allcheck);
+    //将全选状态置反
     allcheck = !allcheck;
-    console.log("allcheck后", this.props.isAllChecked);
-
     let list = this.props.renderlist.splice(0); //复制renderlist数组
     let len = 0;
-    if (allcheck) {
+    if (allcheck) {//全选为true，将所有isChecked变为true
       for (let i = 0; i < list.length; i++) {
         list[i].isChecked = true;
+        len += list[i].count;
       }
       allcheck = true;
-      len = list.length;
-    } else {
+      
+    } else {//全选为false，将所有isChecked变为false
       for (let i = 0; i < list.length; i++) {
         list[i].isChecked = false;
       }
       allcheck = false;
       len = 0;
     }
-
+    //将数据提交给reduecer
     this.props.dispatch({
       type: CHECK_ONE,
       payload: { list, len }
@@ -47,6 +46,7 @@ class CartFooter extends Component {
       type: CHECK_ALL,
       payload: { allcheck, len }
     });
+    //全选/全不选后，重新计算价格
     this.total(list);
   }
   total(list) {

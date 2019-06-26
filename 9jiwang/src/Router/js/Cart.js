@@ -8,6 +8,10 @@ import CartRecommend from '../../component/js/CartRecommend';
 import CartFooter from '../../component/js/CartFooter';
 
 class Cart extends Component {
+    constructor(){
+        super()
+        this.state = { }
+    }
     render() {
         return (
             <div className="wrapper full-height">

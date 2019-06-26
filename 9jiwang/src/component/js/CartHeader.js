@@ -1,8 +1,22 @@
 import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import "../scss/CartHeader.scss";
+import { EDIT_GOOD } from '../../store/visibility';
 
 class CartHeader extends Component {
+  constructor(props) {
+    super(props);
+    this.editGood = this.editGood.bind(this);
+    this.state = {};
+  }
+  editGood() {
+    let show = this.props.isShowCartTotal;
+    show = !show;
+    this.props.dispatch({
+      type: EDIT_GOOD,
+      payload: show
+    })
+  }
   render() {
     return (
       <Fragment>
@@ -40,7 +54,7 @@ class CartHeader extends Component {
                   href="javascript:"
                   className="full-height padding-right flex flex-center white"
                 >
-                  <span>编辑</span>
+                  <span onClick={this.editGood}>编辑</span>
                 </a>
               </div>
               <div
@@ -59,7 +73,7 @@ class CartHeader extends Component {
         <div className="bg-card">
           <h2>购物车</h2>
           <p className="font-13" style={{ lineHeight: " 18px", opacity: 0.7 }}>
-            共<span>2</span>件商品
+            共<span>{this.props.cartTotalCount}</span>件商品
           </p>
         </div>
       </Fragment>

@@ -1,0 +1,66 @@
+.header{
+    color:white;
+    background-color: #E10F04;
+    height: 50px;
+    line-height: 50px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .activeItem{
+        color:orange !important;
+        font-weight:bold !important;
+        font-size: 22px !important;
+        line-height: 46px;
+    }
+    .search{
+        width: 100%;
+        div{
+            border: none;
+            padding: 5px;
+            span{
+                #AreaId{
+                    width: 82px;
+                    height: 100%;
+                    box-sizing: border-box;
+                    border: none;
+                    padding: 10px;
+                    border-radius: 17px 0 0 17px/17px 0 0 17px ;
+                    font-size: 8px;
+                    border-right: 1px solid #ccc;
+                }
+            }
+            input{
+                width: 304px;
+                height: 100%;
+                box-sizing: border-box;
+                padding: 10px;
+                border: none;
+                border-radius: 0 17px 17px 0/0 17px 17px 0;
+                font-size: 14px;
+                color: #C4C4C4;
+            }
+        }
+    }
+
+
+    .item{
+        width: 100%;
+        .ul{
+            float: left;
+            width: 100%;
+            li{
+                float: left;
+                span{
+                    font-size: 15px;
+                    line-height: 30px;
+                    color: #F9CFCD;
+                    padding: 2px 12px;
+                }
+
+            }
+
+        }
+    }
+}

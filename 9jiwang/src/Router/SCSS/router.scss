@@ -1,0 +1,28 @@
+html,body {height: 100%;width: 100%}
+.bigBox{
+    height: 100%;
+    display: flex !important;
+    flex-direction: column;
+    //position: relative;
+    .header{
+        height:110px;
+        //line-height: 102px;
+    }
+    .main{
+        flex: 1;
+        background: #ccc;
+        overflow-x: hidden;
+        overflow-y: scroll;
+    }
+    .footer{
+        height: 70px;
+    }
+    .back{
+        width: 43px;
+        height: 43px;
+        position: fixed;
+        right: 5%;
+        bottom: 10%;
+        z-index: 1000;
+    }
+}

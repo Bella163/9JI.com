@@ -22,7 +22,8 @@ import {Provider} from 'react-redux'
 import store from './store/store'
 // 引入路由工具包
 import { BrowserRouter as Router, Route ,Redirect, Switch, withRouter  } from "react-router-dom";
-
+//引入awesome字体图标样式
+import './assets/fonts/font-awesome-4.7.0/scss/font-awesome.scss';
 
 
 //引入js文件
@@ -51,9 +52,9 @@ ReactDOM.render(<Provider store={store}>
     </Router>
 </Provider>, document.getElementById('root'));
 
+
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
-
 

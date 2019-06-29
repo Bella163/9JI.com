@@ -5,6 +5,7 @@ import './index.css';
 
 import Detail from './Router/js/Detail';
 import Cart from './Router/js/Cart';
+import IRouter from './Router/js/IRouter';
 import { Provider } from 'react-redux';
 import store from './store/store';
 
@@ -14,8 +15,9 @@ import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
     <Provider store={store}>
-        <Detail />
+        {/* <Detail /> */}
         {/* <Cart/> */}
+        <IRouter/>
     </Provider>
 
 , document.getElementById('root'));

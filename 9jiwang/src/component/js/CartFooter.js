@@ -5,7 +5,8 @@ import {
   CHECK_ALL,
   TOTAL_MONEY,
   CHECK_ONE,
-  REMOVE_GOOD
+  REMOVE_GOOD,
+  HAVE_GOOD
 } from "../../store/visibility";
 
 class CartFooter extends Component {
@@ -17,20 +18,22 @@ class CartFooter extends Component {
       list: []
     };
   }
-  allCheck() {//全选逻辑
+  allCheck() {
+    //全选逻辑
     let allcheck = this.props.isAllChecked;
     //将全选状态置反
     allcheck = !allcheck;
     let list = this.props.renderlist.splice(0); //复制renderlist数组
-    let len = 0;
-    if (allcheck) {//全选为true，将所有isChecked变为true
+    let len = 0; //商品数量
+    if (allcheck) {
+      //全选为true，将所有isChecked变为true
       for (let i = 0; i < list.length; i++) {
         list[i].isChecked = true;
         len += list[i].count;
       }
       allcheck = true;
-      
-    } else {//全选为false，将所有isChecked变为false
+    } else {
+      //全选为false，将所有isChecked变为false
       for (let i = 0; i < list.length; i++) {
         list[i].isChecked = false;
       }
@@ -68,14 +71,46 @@ class CartFooter extends Component {
 
   removeGood() {
     let list = this.props.renderlist.splice(0);
+    //全选逻辑
+    let allcheck = this.props.isAllChecked;
+    //将全选状态置反
+    allcheck = !allcheck;
     let renlist = list.filter(item => {
-      return item.isChecked == false;
+      return item.isChecked === false;
     });
-    this.props.dispatch({
-      type: REMOVE_GOOD,
-      payload: renlist
-    });
-    this.total(renlist)
+    let len = 0; //商品数量
+    if (renlist.length) {
+      for (let i = 0; i < renlist.length; i++) {
+        len += renlist[i].count;
+      }
+      this.props.dispatch({
+        type: REMOVE_GOOD,
+        payload: { renlist, len }
+      });
+    } else {
+      len = 0;
+      this.props.dispatch({
+        type: CHECK_ALL,
+        payload: { allcheck, len }
+      });
+    }
+
+    this.total(renlist);
+    this.haveProduct(len);
+  }
+  haveProduct(count) {
+    let len = count;
+    if (len > 0) {
+      this.props.dispatch({
+        type: HAVE_GOOD,
+        payload: true
+      });
+    } else {
+      this.props.dispatch({
+        type: HAVE_GOOD,
+        payload: false
+      });
+    }
   }
   componentWillMount() {
     const { renderlist } = this.props;
@@ -84,24 +119,6 @@ class CartFooter extends Component {
     });
   }
   render() {
-    const cal = (
-      <a
-        href="javascript:"
-        className="settlement white flex-child-noshrink margin-left main-bgcolor"
-      >
-        {" "}
-        去结算{" "}
-      </a>
-    );
-    const del = (
-      <a
-        href="javascript:"
-        className="settlement main-bgcolor white flex-child-noshrink"
-        onClick={this.removeGood}
-      >
-        删除所选
-      </a>
-    );
     return (
       <div className="cart-total">
         <div className="wrapper flex flex-justify-between flex-align-center">
@@ -126,9 +143,18 @@ class CartFooter extends Component {
             )}
             <p className="grey-9">共{this.props.cartTotalCount}件商品</p>
           </div>
-          {/* {this.props.isShowCartTotal ? (<a href="javascript:" className="settlement white flex-child-noshrink margin-left main-bgcolor"> 去结算 </a> ) : (<a href="javascript:" className="settlement main-bgcolor white flex-child-noshrink" onClick={() => {this.removeGood;}}>删除所选</a>
-          )} */}
-          {this.props.isShowCartTotal ? cal : del}
+          {/* 判断是显示“去结算”还是“删除所选” */}
+          {this.props.isShowCartTotal ? (
+            <span className="settlement white flex-child-noshrink margin-left main-bgcolor">
+              去结算
+            </span>) : (
+            <span
+              className="settlement main-bgcolor white flex-child-noshrink"
+              onClick={this.removeGood}
+            >
+              删除所选
+            </span>
+          )}
         </div>
       </div>
     );

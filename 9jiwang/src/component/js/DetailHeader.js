@@ -2,15 +2,24 @@ import React, { Component } from "react";
 import "../scss/DetailHeader.scss";
 
 class DetailHeader extends Component {
+  constructor(props) {
+    super(props);
+    this.goBack = this.goBack.bind(this)
+    this.state = {
+
+    }
+  }
+  goBack() {
+    window.history.go(-1)
+  }
   render() {
     return (
       <div
         className="detail-head flex flex-justify-between relative bb"
         style={{ backgroundColor: "rgba(255, 255, 255, 0.95)" }}
       >
-        <div className="left-side">
-          <a
-            href="javascript:;"
+        <div className="left-side" onClick={this.goBack}>
+          <a href="javascript:;"
             className="back-button flex flex-center"
             style={{ color: "rgb(51, 51, 51)", paddingLeft: "0px" }}
           >
@@ -23,21 +32,20 @@ class DetailHeader extends Component {
           style={{ left: "44px", right: "44px" }}
         >
           <div className="detail-nav">
-            <a href="javascript:" className="active">
+            <a href="javascript:;" className="active">
               商品
             </a>
-            <a href="javascript:" className="">
+            <a href="javascript:;" className="">
               评论
             </a>
-            <a href="javascript:" className="">
+            <a href="javascript:;" className="">
               详情
             </a>
           </div>
         </div>
         <div className="right-side flex flex-center">
           
-          <a
-            href="javascript:;"
+          <a href="javascript:;"
             className="menu-btn flex flex-center grey-6"
             style={{ color: "rgb(51, 51, 51)" }}
           >

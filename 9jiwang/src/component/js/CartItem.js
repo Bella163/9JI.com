@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 // import { HashRouter as Router, Route, Link } from "react-router-dom";
-import "../scss/CartItem.scss";
+import "../SCSS/CartItem.scss";
 import {
   REDUCE_GOOD,
   ADD_GOOD,

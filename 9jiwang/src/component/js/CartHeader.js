@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
-import "../scss/CartHeader.scss";
+import "../SCSS/CartHeader.scss";
 import { EDIT_GOOD } from '../../store/visibility';
 
 class CartHeader extends Component {

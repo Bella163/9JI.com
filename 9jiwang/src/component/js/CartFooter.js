@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import "../scss/CartFooter.scss";
+import "../SCSS/CartFooter.scss";
 import {
   CHECK_ALL,
   TOTAL_MONEY,

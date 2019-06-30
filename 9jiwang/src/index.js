@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom';
 import './assets/fonts/font-awesome-4.7.0/scss/font-awesome.scss';
 import './index.css';
 
-import Detail from './Router/js/Detail';
-import Cart from './Router/js/Cart';
-import IRouter from './Router/js/IRouter';
+import Detail from './Router/JS/Detail';
+import Cart from './Router/JS/Cart';
+import IRouter from './Router/JS/IRouter';
 import { Provider } from 'react-redux';
 import store from './store/store';
 

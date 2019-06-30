@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 // import '../scss/App.scss';
-import { Route, Link, withRouter } from "react-router-dom";
-import List from "./List";
+// import { Route, Link, withRouter } from "react-router-dom";
+// import List from "./List";
 
 
 

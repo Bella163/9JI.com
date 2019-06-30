@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-import "../scss/CartRecommend.scss";
+import "../SCSS/CartRecommend.scss";
 
 class CartRecommend extends Component {
   render() {

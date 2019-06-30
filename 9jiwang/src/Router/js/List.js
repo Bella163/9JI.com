@@ -81,7 +81,7 @@ class List extends Component {
     let renderlist = newArr.filter(val => {
       if (val.cate[0].name === params.category) {
         let renlist = val.product.list.filter(item => {
-          return item.cate.indexOf(params.name) != -1;
+          return item.cate.indexOf(params.name) !== -1;
         });
         return renlist.length > 0;
       }

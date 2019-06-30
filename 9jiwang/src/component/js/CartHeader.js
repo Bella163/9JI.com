@@ -1,12 +1,13 @@
 import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
-import "../scss/CartHeader.scss";
+import "../SCSS/CartHeader.scss";
 import { EDIT_GOOD } from '../../store/visibility';
 
 class CartHeader extends Component {
   constructor(props) {
     super(props);
     this.editGood = this.editGood.bind(this);
+    this.goBack = this.goBack.bind(this);
     this.state = {};
   }
   editGood() {
@@ -16,6 +17,9 @@ class CartHeader extends Component {
       type: EDIT_GOOD,
       payload: show
     })
+  }
+  goBack() {
+    window.history.go(-1)//返回上一页这段代码
   }
   render() {
     return (
@@ -32,14 +36,13 @@ class CartHeader extends Component {
               }}
             >
               <div className="left-side">
-                <a
-                  href="javascript:;"
+                <span onClick={this.goBack}
                   className="back-button flex flex-center"
                   style={{ color: "rgb(255, 255, 255)", paddingLeft: "0px" }}
                 >
                   <i className="fa fa-angle-left font-30" />
                   <span className="back-text font-16" />
-                </a>
+                </span>
               </div>
               <div
                 className="title flex flex-center"
@@ -50,12 +53,11 @@ class CartHeader extends Component {
                 </h3>
               </div>
               <div className="right-side flex flex-center">
-                <a
-                  href="javascript:"
+                <span
                   className="full-height padding-right flex flex-center white"
                 >
                   <span onClick={this.editGood}>编辑</span>
-                </a>
+                </span>
               </div>
               <div
                 className="absolute full-width"

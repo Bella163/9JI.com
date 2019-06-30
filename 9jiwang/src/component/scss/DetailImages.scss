@@ -1,0 +1,16 @@
+.detail-html-padding {
+    padding: 0 10px 15px;
+}
+.detail-html p, .detail-html table {
+    width: 100%!important;
+}
+.detail-html img, .detail-html video {
+    width: 100%!important;
+    height: auto!important;
+}
+.detail-html img {
+    display: block;
+}
+.detail-html p{
+    padding-bottom:10px;
+}

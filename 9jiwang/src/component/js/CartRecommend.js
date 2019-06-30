@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-import "../scss/CartRecommend.scss";
+import "../SCSS/CartRecommend.scss";
 
 class CartRecommend extends Component {
   render() {
@@ -24,9 +24,9 @@ class CartRecommend extends Component {
               </p>
               <div className="flex flex-justify-between flex-align-center margin-top">
                 <span className="red font-16">￥139</span>
-                <a href="javascript:">
+                <span>
                   <i className="icon-cart" />
-                </a>
+                </span>
               </div>
             </div>
           </li>
@@ -38,9 +38,9 @@ class CartRecommend extends Component {
               <p className="lines-2 mt-5 recommend-name">华为 双肩背包</p>
               <div className="flex flex-justify-between flex-align-center margin-top">
                 <span className="red font-16">￥199</span>
-                <a href="javascript:">
+                <span>
                   <i className="icon-cart" />
-                </a>
+                </span>
               </div>
             </div>
           </li>
@@ -54,9 +54,9 @@ class CartRecommend extends Component {
               </p>
               <div className="flex flex-justify-between flex-align-center margin-top">
                 <span className="red font-16">￥85</span>
-                <a href="javascript:">
+                <span>
                   <i className="icon-cart" />
-                </a>
+                </span>
               </div>
             </div>
           </li>
@@ -70,9 +70,9 @@ class CartRecommend extends Component {
               </p>
               <div className="flex flex-justify-between flex-align-center margin-top">
                 <span className="red font-16">￥149</span>
-                <a href="javascript:">
+                <span>
                   <i className="icon-cart" />
-                </a>
+                </span>
               </div>
             </div>
           </li>
@@ -86,9 +86,9 @@ class CartRecommend extends Component {
               </p>
               <div className="flex flex-justify-between flex-align-center margin-top">
                 <span className="red font-16">￥369</span>
-                <a href="javascript:">
+                <span>
                   <i className="icon-cart" />
-                </a>
+                </span>
               </div>
             </div>
           </li>

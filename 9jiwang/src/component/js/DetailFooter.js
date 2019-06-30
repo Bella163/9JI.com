@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import "../scss/DetailFooter.scss";
+import "../SCSS/DetailFooter.scss";
 import { CLOSE_BUY_BOX } from "../../store/visibility";
 
 class DetailFooter extends Component {
@@ -9,7 +9,6 @@ class DetailFooter extends Component {
     this.openBuyBox = this.openBuyBox.bind(this);
     this.state = {};
   }
-  
   render() {
     return (
       <div className="btns-wrapper detail-footer">
@@ -28,7 +27,7 @@ class DetailFooter extends Component {
                 <span>收藏</span>
               </div>
               <a
-                href="/trade/cart"
+                href="#/cart"
                 className="btn-small flex flex-col flex-justify-center flex-align-center relative border-right"
               >
                 <i className="small-icon cart" />
@@ -37,13 +36,13 @@ class DetailFooter extends Component {
             </div>
             <div
               className="btn-big border-top flex-child-average"
-              onClick={()=>this.openBuyBox("加入购物车")}
+              onClick={() => this.openBuyBox("加入购物车")}
             >
               加入购物车
             </div>
             <div
               className="btn-big flex-child-average red"
-              onClick={()=>this.openBuyBox("立即购买")}
+              onClick={() => this.openBuyBox("立即购买")}
             >
               立即购买
             </div>
@@ -63,6 +62,7 @@ class DetailFooter extends Component {
     });
   }
 }
+
 export default connect(state => {
   return state;
 })(DetailFooter);

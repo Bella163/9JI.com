@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import "../scss/DetailBasicInfo.scss";
+import React, { Component } from "./node_modules/react";
+import { connect } from "./node_modules/react-redux";
+import "../SCSS/DetailBasicInfo.scss";
 
 class DetailBasicInfo extends Component {
   constructor(props) {

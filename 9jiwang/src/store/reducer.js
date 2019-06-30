@@ -10,7 +10,9 @@ import {
   EDIT_GOOD,
   CLOSE_BUY_BOX,
   STORE_AXIOS_DATA,
+  LIST_STORE_AXIOS_DATA,
   SET_DETAIL_RENDERLIST,
+  SET_LIST_RENDERLIST,
   HAVE_GOOD
 } from "./visibility";
 const defaultState = {
@@ -23,7 +25,9 @@ const defaultState = {
   isShowDetailBuyBox: false, //是否显示详情页'加入购物车'的遮罩
   detailFooterInfo: "加入购物车", //详情页'加入购物车'遮罩的底部信息
   axiosData: null, //axios请求回来的所有数据
+  listAxiosData: null, //axios请求回来的所有数据
   detailRenderList: [], //详情页渲染列表数组
+  listRenderList: [], //列表页渲染数组
   haveGoods: false //购物车内是否有商品
 };
 
@@ -87,11 +91,20 @@ export default (state = defaultState, action) => {
         ...state,
         axiosData: action.payload
       };
-
+      case LIST_STORE_AXIOS_DATA: //列表页存储请求回来的axios数据
+      return {
+        ...state,
+        listAxiosData: action.payload
+      };
     case SET_DETAIL_RENDERLIST: //设置 详情页的渲染数组
       return {
         ...state,
         detailRenderList: action.payload
+      };
+    case SET_LIST_RENDERLIST: //设置 详情页的渲染数组
+      return {
+        ...state,
+        listRenderList: action.payload
       };
     case ADD_TO_CART: //详情页点击“加入购物车”，商品信息添加到购物车渲染数组
       return {

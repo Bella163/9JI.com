@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import "../scss/DetailFooter.scss";
+import React, { Component } from "./node_modules/react";
+import { connect } from "./node_modules/react-redux";
+import "../SCSS/DetailFooter.scss";
 import { CLOSE_BUY_BOX } from "../../store/visibility";
 
 class DetailFooter extends Component {

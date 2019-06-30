@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import "../scss/DetailImages.scss";
+import "../SCSS/DetailImages.scss";
 
 class DetailImages extends Component {
   constructor(props) {

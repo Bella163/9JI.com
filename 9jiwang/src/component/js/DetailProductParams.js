@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import "../scss/DetailProductParams.scss";
+import "../SCSS/DetailProductParams.scss";
 
 class DetailProductParams extends Component {
   constructor(props) {

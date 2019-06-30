@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import "../scss/DetailHeader.scss";
+import React, { Component } from "./node_modules/react";
+import "../SCSS/DetailHeader.scss";
 
 class DetailHeader extends Component {
   constructor(props) {

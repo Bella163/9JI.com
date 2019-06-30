@@ -1,7 +1,7 @@
-import React, { Component, Fragment } from "react";
-import { connect } from "react-redux";
-import "../scss/DetailBanner.scss";
-import { Carousel, WingBlank } from "antd-mobile";
+import React, { Component, Fragment } from "./node_modules/react";
+import { connect } from "./node_modules/react-redux";
+import "../SCSS/DetailBanner.scss";
+import { Carousel, WingBlank } from "./node_modules/antd-mobile";
 
 class DetailBanner extends Component {
   constructor(props) {

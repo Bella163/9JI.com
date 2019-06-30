@@ -1,0 +1,44 @@
+.sort {
+  top: 0;
+  left: 0;
+  background: #fff;
+  z-index: 9;
+  width: 100%;
+  box-shadow: 0 5px 7px 0 rgba(0, 0, 0, 0.08);
+  .sort-bar {
+    height: 44px;
+  }
+  .sort .sort-item {
+    height: 42px;
+    position: relative;
+    background: #fff;
+    z-index: 10;
+    width: 25%;
+    .sort-item-text {
+      height: 42px;
+    }
+  }
+  .sort-icon {
+    transition: all 0.3s ease;
+  }
+  .fast-sort {
+    padding: 0 5px 15px;
+    .fast-sort-item {
+      -webkit-flex: 1;
+      flex: 1;
+      max-width: 25%;
+      .fast-sort-item-label {
+        height: 24px;
+        border-radius: 12px;
+        margin: 0 5px;
+        padding: 0 5px;
+        background-color: #f5f5f5;
+        font-size: 12px;
+      }
+    }
+  }
+}
+.fa-sort-desc:before,
+.fa-sort-down:before {
+  content: "\F0DD";
+}

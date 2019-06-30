@@ -2,13 +2,13 @@ import React, { Component, Fragment } from "react";
 import axios from "axios";
 import { connect } from "react-redux";
 // import { HashRouter as Router, Route, Link, Redirect, withRouter } from "react-router-dom";
-import DetailHeader from "../../component/js/DetailHeader";
-import DetailBanner from "../../component/js/DetailBanner";
-import DetailBasicInfo from "../../component/js/DetailBasicInfo";
-import DetailFooter from "../../component/js/DetailFooter";
-import DetailBuyBox from "../../component/js/DetailBuyBox";
-import DetailProductParams from "../../component/js/DetailProductParams";
-import DetailImages from "../../component/js/DetailImages";
+import DetailHeader from "../../component/JS/DetailHeader";
+import DetailBanner from "../../component/JS/DetailBanner";
+import DetailBasicInfo from "../../component/JS/DetailBasicInfo";
+import DetailFooter from "../../component/JS/DetailFooter";
+import DetailBuyBox from "../../component/JS/DetailBuyBox";
+import DetailProductParams from "../../component/JS/DetailProductParams";
+import DetailImages from "../../component/JS/DetailImages";
 import {
   STORE_AXIOS_DATA,
   SET_DETAIL_RENDERLIST
@@ -82,7 +82,7 @@ class Detail extends Component {
     });
   }
   render() {
-    return (
+      return (
       <Fragment>
         {this.state.haveData ? (
           <Fragment>
@@ -99,6 +99,8 @@ class Detail extends Component {
         )}
       </Fragment>
     );
+    
+    
   }
 }
 export default connect(state => state)(Detail);

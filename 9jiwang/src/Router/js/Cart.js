@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import "../scss/Cart.scss";
+import "../SCSS/Cart.scss";
 
-import CartHeader from "../../component/js/CartHeader";
-import CartItem from "../../component/js/CartItem";
-import CartRecommend from "../../component/js/CartRecommend";
-import CartFooter from "../../component/js/CartFooter";
+import CartHeader from "../../component/JS/CartHeader";
+import CartItem from "../../component/JS/CartItem";
+import CartRecommend from "../../component/JS/CartRecommend";
+import CartFooter from "../../component/JS/CartFooter";
 import { ADD_TO_CART } from "../../store/visibility";
 
 class Cart extends Component {

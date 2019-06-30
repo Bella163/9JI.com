@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import "../scss/DetailBuyBox.scss";
+import "../SCSS/DetailBuyBox.scss";
 import { CLOSE_BUY_BOX, ADD_TO_CART } from "../../store/visibility";
 
 class DetailBuyBox extends Component {
@@ -18,42 +18,44 @@ class DetailBuyBox extends Component {
       storageActiveIdx: 0, //容量高亮下标
       relationActiveIdx: 0, //版本高亮下标
       skuActiveIdx: 0, //套餐高亮下标
-      colorText: this.props.list[0].sku[0].list[0].value,//初始化颜色数据
-      storageText: this.props.list[0].sku[1].list[0].value,//初始化容量数据
-      productId: this.props.list[0].ppid,//初始化商品编号
-      goodCount: 1,//商品数量
+      colorText: "白色", //初始化颜色数据
+      storageText: "", //初始化容量数据
+      productId: this.props.list[0].ppid, //初始化商品编号
+      goodCount: 1 //商品数量
     };
-    
+
     this.methods();
     this.methods = this.methods.bind(this);
   }
   componentDidMount() {
     console.log("BuyBox-getPropsData:", this.props.list[0]);
   }
-  methods(){
-    this.aa = ()=>{
-
-    }
+  methods() {
+    this.aa = () => {};
   }
-  tabColor(idx, val) {//切换颜色
+  tabColor(idx, val) {
+    //切换颜色
     this.setState({
       colorText: val,
       colorActiveIdx: idx
     });
   }
-  tabStorage(idx, val) {//切换容量
+  tabStorage(idx, val) {
+    //切换容量
     this.setState({
       storageText: val,
       storageActiveIdx: idx
     });
   }
-  tabRelation(idx, ppid) {//切换版本
+  tabRelation(idx, ppid) {
+    //切换版本
     this.setState({
       productId: ppid,
       relationActiveIdx: idx
     });
   }
-  tabSku(idx) {//切换套餐
+  tabSku(idx) {
+    //切换套餐
     this.setState({
       skuActiveIdx: idx
     });
@@ -65,38 +67,39 @@ class DetailBuyBox extends Component {
       payload: { showBuyBox: false, info }
     });
   }
-  reduceGood(num){
+  reduceGood(num) {
     let count = num;
-    if(num > 1) {
+    if (num > 1) {
       count--;
       this.setState({
         goodCount: count
-      })
+      });
     } else {
       count = 1;
-      this.setState ({
+      this.setState({
         goodCount: count
-      })
+      });
     }
   }
-  addGood(num){
+  addGood(num) {
     let count = num;
-    if(num >= 3) {
+    if (num >= 3) {
       count = 3;
-      this.setState ({
+      this.setState({
         goodCount: count
-      })
-      
+      });
     } else {
       count++;
       this.setState({
         goodCount: count
-      })
+      });
     }
   }
-  addToCart(){
+  addToCart() {
     let imgUrl = this.props.list[0].imagePath;
-    let title = `${this.props.list[0].productName}${this.state.storageText}${this.state.colorText}`;
+    let title = `${this.props.list[0].productName}${this.state.storageText}${
+      this.state.colorText
+    }`;
     let count = this.state.goodCount;
     let price = this.props.list[0].price;
     let ppid = this.props.list[0].ppid;
@@ -107,26 +110,28 @@ class DetailBuyBox extends Component {
       price,
       ppid,
       isChecked: false
-    }
-    let cartList = this.props.renderlist;//复制仓库的购物车渲染列表
-    cartList.unshift(obj);//往购物车渲染列表添加商品信息
-    this.props.dispatch({//提交到仓库
+    };
+    let cartList = this.props.renderlist; //复制仓库的购物车渲染列表
+    cartList.unshift(obj); //往购物车渲染列表添加商品信息
+    this.props.dispatch({
+      //提交到仓库
       type: ADD_TO_CART,
       payload: cartList
     });
-    sessionStorage.setItem('cartList',JSON.stringify(cartList));
-    console.log()
-    let data = JSON.parse(sessionStorage.getItem('cartList'))
+    sessionStorage.setItem("cartList", JSON.stringify(cartList));
+    console.log();
+    let data = JSON.parse(sessionStorage.getItem("cartList"));
     this.closeBuyBox();
-    console.log('sessionStorage',data)
+    console.log("sessionStorage", data);
   }
   render() {
-    let colors = this.props.list[0].sku[0].list; //颜色渲染数组
-    let storage = this.props.list[0].sku[1].list; //容量渲染数组
-    let relation = this.props.list[0].relation; // 版本渲染数组
+    // let colors = this.props.list[0].sku[0].list; //颜色渲染数组
+    // let storage = this.props.list[0].sku[1].list; //容量渲染数组
+    // let relation = this.props.list[0].relation; // 版本渲染数组
     let allInfo = this.props.list; //详情页所有信息的数组
 
-    return allInfo.map(val => {//渲染detailBuyBox所有内容
+    return allInfo.map(val => {
+      //渲染detailBuyBox所有内容
       return (
         <div
           className="touch-wrap detail-buy-box"
@@ -184,61 +189,41 @@ class DetailBuyBox extends Component {
                 className="popup-scroller buy-product-content"
                 style={{ height: 470, paddingBottom: 50 }}
               >
-                <div className="buy-product-module">
-                  <div className="buy-module-title">
-                    <span className="sku-title">颜色</span>
-                  </div>
-                  <div className="buy-module-content flex flex-wrap">
-                    {/* 渲染颜色类别 */}
-                    {colors.map((item, index) => {
-                      return (
-                        <div className="svg-btn" key={item.ppid}>
-                          <div
-                            className={
-                              this.state.colorActiveIdx === index
-                                ? "btn-buy btn-small active"
-                                : "btn-buy btn-small"
-                            }
-                            onClick={() => this.tabColor(index, item.value)}
-                          >
-                            {item.value}
-                          </div>
-                        </div>
-                      );
-                    })}
-                  </div>
-                </div>
-                <div className="buy-product-module">
-                  <div className="buy-module-title">
-                    <span className="sku-title">容量</span>
-                  </div>
-                  <div className="buy-module-content flex flex-wrap">
-                    {/* 渲染容量类别 */}
-                    {storage.map((item, index) => {
-                      return (
-                        <div className="svg-btn" key={item.ppid}>
-                          <div
-                            className={
-                              this.state.storageActiveIdx === index
-                                ? "btn-buy btn-small active"
-                                : "btn-buy btn-small"
-                            }
-                            onClick={() => this.tabStorage(index, item.value)}
-                          >
-                            {item.value}
-                          </div>
-                        </div>
-                      );
-                    })}
-                  </div>
-                </div>
+                {val.sku.map(sku => {
+                  return (
+                    <div className="buy-product-module" key={sku.title}>
+                      <div className="buy-module-title">
+                        <span className="sku-title">{sku.title}</span>
+                      </div>
+                      <div className="buy-module-content flex flex-wrap">
+                        {/* 渲染颜色类别 */}
+                        {sku.list.map((item, index) => {
+                          return (
+                            <div className="svg-btn" key={item.ppid}>
+                              <div
+                                className={
+                                  this.state.colorActiveIdx === index
+                                    ? "btn-buy btn-small active"
+                                    : "btn-buy btn-small"
+                                }
+                                onClick={() => this.tabColor(index, item.value)}
+                              >
+                                {item.value}
+                              </div>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  );
+                })}
                 <div className="buy-product-module">
                   <div className="buy-module-title">
                     <span className="sku-title">版本</span>
                   </div>
                   <div className="buy-module-content flex flex-wrap">
                     {/* 渲染版本类别 */}
-                    {relation.map((item, index) => {
+                    {val.relation.map((item, index) => {
                       return (
                         <div className="svg-btn" key={item.ppid}>
                           <div
@@ -277,7 +262,6 @@ class DetailBuyBox extends Component {
                         </div>
                       );
                     })}
-
                   </div>
                 </div>
                 <div className="buy-product-module">
@@ -315,7 +299,8 @@ class DetailBuyBox extends Component {
                         {/* 渲染 电池保、碎屏保 等 的具体保障内容 */}
                         {service.sku.map(sku => {
                           return (
-                            <div key={sku.ppid}
+                            <div
+                              key={sku.ppid}
                               className="btn-buy btn-avge2 lines-1"
                               style={{ padding: 0 }}
                             >
@@ -327,14 +312,26 @@ class DetailBuyBox extends Component {
                     </div>
                   );
                 })}
-                <div className="buy-module-count flex flex-justify-between flex-align-center border-top border-bottom"> 
+                <div className="buy-module-count flex flex-justify-between flex-align-center border-top border-bottom">
                   <div>数量</div>
                   <div className="buy-module-content flex flex-wrap">
-                    <div className={this.state.goodCount > 1 ? "btn-tiny btn-minus" : "btn-tiny btn-minus disable"} onClick={()=>this.reduceGood(this.state.goodCount)}>
+                    <div
+                      className={
+                        this.state.goodCount > 1
+                          ? "btn-tiny btn-minus"
+                          : "btn-tiny btn-minus disable"
+                      }
+                      onClick={() => this.reduceGood(this.state.goodCount)}
+                    >
                       <i aria-hidden="true" className="fa fa-minus" />
                     </div>
-                    <span className="product-number">{this.state.goodCount}</span>
-                    <div className="btn-tiny btn-plus" onClick={()=>this.addGood(this.state.goodCount)}>
+                    <span className="product-number">
+                      {this.state.goodCount}
+                    </span>
+                    <div
+                      className="btn-tiny btn-plus"
+                      onClick={() => this.addGood(this.state.goodCount)}
+                    >
                       <i aria-hidden="true" className="fa fa-plus" />
                     </div>
                   </div>
@@ -342,16 +339,16 @@ class DetailBuyBox extends Component {
                 <div className="buy-product-module">
                   <div className="buy-module-title">配置</div>
                   <div className="buy-module-content mt-5">
-                    <span className="buy-content-text">
-                      {val.config}
-                    </span>
+                    <span className="buy-content-text">{val.config}</span>
                   </div>
                 </div>
               </div>
             </div>
             <div className="popup-btns-row" style={{ height: 50 }}>
               <div className="sku-btn">
-                <div className="btn" onClick={this.addToCart}>{this.props.detailFooterInfo}</div>
+                <div className="btn" onClick={this.addToCart}>
+                  {this.props.detailFooterInfo}
+                </div>
               </div>
             </div>
           </div>

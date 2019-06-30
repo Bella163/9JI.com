@@ -1,0 +1,117 @@
+.Nav_detail{
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  width: 100%;
+  //height: 155px;
+  margin-bottom: 10px;
+  .Nav_content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    section{
+      margin-top: 15px;
+      height: 140px;
+    }
+    .nav_left{
+      margin-left: 14px;
+      width: 92px;
+      background: red;
+      text-align: center;
+      .l_title{
+        display: block;
+        font-size: 15px;
+        color: #FFF6F6;
+        padding: 15px 0 9px;
+      }
+      .msg{
+        font-size: 10px;
+        color: #F88E8E;
+        padding-bottom: 11px;
+        opacity: 0.5%;
+      }
+      .start{
+        font-size: 11px;
+        color: #FFFFFF;
+        padding-bottom: 9px;
+      }
+      .time{
+        width: 82px;
+        height: 24px;
+        background: #fff;
+        border-radius: 3px;
+        margin-left: 6px;
+        span{
+          height: 24px;
+          line-height: 24px;
+          text-align: center;
+          font-size: 8px;
+          color: #f00;
+        }
+      }
+    }
+    .nav_right{
+      width: 295px;
+      margin-right: 13px;
+      background: #fff;
+      overflow-x: scroll;
+      ul{
+        width: 500%;
+        overflow: hidden;
+        li{
+          float: left;
+          width: 114px;
+          text-align: center;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          p{
+            width: 85px;
+            margin: 0 10px;
+            box-sizing: border-box;
+            overflow: hidden;
+            text-overflow:ellipsis;
+            white-space: nowrap;
+          }
+          .title{
+            width: 100%;
+            overflow: hidden;
+            text-overflow:ellipsis;
+            white-space: nowrap;
+            font-size: 13px;
+            line-height: 25px;
+            color: #333333;
+          }
+          .price{
+            font-size: 11px;
+            line-height: 20px;
+            color: #f00;
+            font-weight: bold;
+          }
+          .ponit{
+            background: red;
+            border: none;
+            border-radius: 6px;
+            color: #fff;
+            height: 20px;
+            width: 80%;
+            margin-bottom: 10px;
+          }
+          img{
+            width: 65px;
+            height: 64px;
+          }
+
+        }
+      }
+    }
+  }
+  .Slogan{
+    width: 100%;
+    height: 68px;
+    img{
+      width: 50%;
+    }
+  }
+}
